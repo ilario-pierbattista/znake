@@ -1,0 +1,72 @@
+================ INSTALL INFO ================
+1. Dependencies
+2. Installation 
+3. Uninstallation
+4. Manual compiling
+==============================================
+
+1. Dependences ===============================
+
+- binutils
+- gcc
+- glibc
+- ncurses
+- make
+==============================================
+
+2. Installation ==============================
+
+First of all, you've to decompress the tarball
+and move into the folder znake-<your_ver>. Run
+	
+	$ tar -zxvf znake-<your_ver>.tar.gz
+	$ cd znake-<your_ver>
+	
+Now you should check if all dependencies
+are satisfied. Run
+
+	$ make check
+	
+It will run the script check-dep, if something
+is wrong, it will echo on the screen, however
+the script echoes to check.log file.
+Now is time to compile the sources and install
+bin files (ad root).
+
+	$ make
+	# make install
+	
+Znake will be installed in /usr/bin.
+==============================================
+
+3. Uninstallation ============================
+
+To uninstall znake run
+	
+	$ make uninstall
+
+==============================================
+
+4. Manual compiling ==========================
+
+You might prefer to manually compile the sources
+or you might do it in case of make failure.I'm a
+n00b with makefiles :P
+The game is very tiny, compiling will be fast
+and very simple. Of course, you must have 
+installed glibc and ncurses.
+
+To compile it (I presume you are in znake folder
+right now):
+
+	$ cd src
+	$ gcc -o znake -l ncurses main.c soviet.c
+
+And if you want to install it (as root):
+
+	# cp znake /usr/bin/
+
+Or wherever you want to install it.
+
+Please, report bugs here <ulven101@gmail.com>
+==============================================

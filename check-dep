@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# dep to check
+# gcc
+# ncurses
+# libintl ({d,n}gettext()}
+# make 
+
+check() {
+	echo -n "checking $1..." >> check.log;
+	if $2 > /dev/null ; then {
+		echo "yes" >> check.log;
+	} else {
+		echo "$1 no";
+		echo "no" >> check.log;
+	} fi;
+}
+
+h_check() {
+	echo -n "checking $1..." >> check.log;
+	if [ -f $2 ] ; then {
+		echo "yes" >> check.log;
+	} else {
+		echo "$1 no";
+		echo "no" >> check.log;
+	} fi;
+}
+
+echo | tee check.log
+echo "Cheking dependences";
+
+check GCC "gcc --version";
+check make "make --version";
+h_check ncurses "/usr/include/ncurses.h";
+h_check libintl "/usr/include/libintl.h";
+echo
+echo "Done"
+echo 
