@@ -64,7 +64,7 @@ right now):
 
 And if you want to install it (as root):
 
-	# cp znake /usr/bin/
+	# cp znake /usr/local/bin/
 
 Or wherever you want to install it.
 
